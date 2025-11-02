@@ -1,0 +1,125 @@
+/*
+Kai Campbell — Personal Website (Single-file React component)
+- Tailwind CSS utility classes are used for styling (assumes Tailwind is set up in your project or use CDN in index.html).
+- Save this file as `KaiWebsite.jsx` inside `src/components/` (or root) in a React app created with Vite / Create React App.
+
+Quick deploy to GitHub Pages:
+1. Create React app (Vite or CRA). Add this component and import it in App.jsx.
+2. Install Tailwind or use CDN for quick prototype (see comment below).
+3. Build and push to GitHub. Enable GitHub Pages from the repository settings (branch: gh-pages or main + /docs folder) or use `gh-pages` package for CRA.
+
+Placeholder images and links are included — replace with real assets.
+*/
+
+import React from "react";
+
+export default function KaiCampbellWebsite() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white via-sky-50 to-white text-gray-800">
+      <header className="max-w-5xl mx-auto p-6 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 rounded-full overflow-hidden shadow-lg">
+            <img src="/images/kai-avatar.jpg" alt="Kai Campbell" className="w-full h-full object-cover" />
+          </div>
+          <div>
+            <h1 className="text-2xl font-extrabold">Kai Campbell</h1>
+            <p className="text-sm text-gray-600">Winner — Payap University ดาว–เดือน (ปีการศึกษา 2568)</p>
+          </div>
+        </div>
+        <nav className="hidden md:flex gap-4">
+          <a href="#about" className="text-sm hover:underline">About</a>
+          <a href="#gallery" className="text-sm hover:underline">Gallery</a>
+          <a href="#media" className="text-sm hover:underline">Media</a>
+          <a href="#contact" className="text-sm hover:underline">Contact</a>
+        </nav>
+      </header>
+
+      <main className="max-w-5xl mx-auto p-6">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center mb-8">
+          <div className="md:col-span-2">
+            <h2 className="text-4xl font-bold mb-3">Hello — I'm Kai</h2>
+            <p className="text-lg text-gray-700 mb-4">
+              International College — Business Management (International Business). Winner of the Payap University
+              ดาว–เดือน (Sun & Moon) contest for academic year 2568. I’m passionate about creative leadership, event
+              presentation, and cross-cultural communication.
+            </p>
+            <div className="flex gap-3">
+              <a href="#contact" className="inline-block px-4 py-2 bg-sky-600 text-white rounded-lg shadow hover:opacity-95">Contact Me</a>
+              <a href="/files/kai-resume.pdf" className="inline-block px-4 py-2 border border-sky-600 text-sky-600 rounded-lg hover:bg-sky-50">Download Resume</a>
+            </div>
+          </div>
+
+          <div className="w-full flex justify-center">
+            <div className="w-56 h-56 rounded-2xl overflow-hidden shadow-2xl">
+              <img src="/images/kai-winning-photo.jpg" alt="Kai winning Payap University" className="w-full h-full object-cover" />
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="bg-white/80 p-6 rounded-2xl shadow mb-8">
+          <h3 className="text-2xl font-semibold mb-3">About the Win</h3>
+          <p className="text-gray-700 mb-4">
+            The ดาว–เดือน contest is Payap University's annual welcome event for new students. I competed as PYU 15
+            and was honored to be selected เดือนมหาวิทยาลัย for the class of 2568. The contest included an interview,
+            talent presentation, and an on-stage Q&amp;A judged by faculty and student representatives.
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-700">
+            <li><strong>Contest Date:</strong> September 13, 2568 (Payap announcement)</li>
+            <li><strong>Faculty:</strong> International College — Business Management</li>
+            <li><strong>Title:</strong> เดือนมหาวิทยาลัย (Mr.)</li>
+            <li><strong>Popular Vote:</strong> — (see gallery / media)</li>
+          </ul>
+        </section>
+
+        <section id="gallery" className="mb-8">
+          <h3 className="text-2xl font-semibold mb-4">Gallery</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {/* Replace placeholders with real images */}
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div key={i} className="rounded-lg overflow-hidden shadow">
+                <img src={`/images/gallery-${i + 1}.jpg`} alt={`Gallery ${i + 1}`} className="w-full h-40 object-cover" />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="media" className="bg-white/80 p-6 rounded-2xl shadow mb-8">
+          <h3 className="text-2xl font-semibold mb-3">Media & Clips</h3>
+          <p className="text-gray-700 mb-4">Watch the highlights and the winning announcement:</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="aspect-video rounded overflow-hidden shadow">
+              <iframe
+                title="Payap Sun & Moon Highlights"
+                src="https://www.youtube.com/embed/nPK8RrzitCk"
+                className="w-full h-full"
+                allowFullScreen
+              />
+            </div>
+            <div className="rounded p-4 bg-gray-50">
+              <h4 className="font-semibold mb-2">Official Results</h4>
+              <p className="text-gray-700 mb-2">Full results were posted by Payap University on their news page.</p>
+              <a href="https://www.payap.ac.th/site/?p=25364" target="_blank" rel="noreferrer" className="text-sky-600 hover:underline">Official announcement (payap.ac.th)</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="p-6 rounded-2xl shadow bg-white/80">
+          <h3 className="text-2xl font-semibold mb-3">Contact & Social</h3>
+          <p className="text-gray-700 mb-4">Want to collaborate, book a talk, or ask about the contest?</p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href="mailto:kai.campbell@example.com" className="px-4 py-2 border rounded-lg">kai.campbell@example.com</a>
+            <div className="flex gap-3 items-center">
+              <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" className="text-sm hover:underline">Facebook</a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="text-sm hover:underline">Instagram</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="text-sm hover:underline">LinkedIn</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="py-6 text-center text-sm text-gray-600">
+        © {new Date().getFullYear()} Kai Campbell — Built with ❤️ • Template for GitHub Pages deployment
+      </footer>
+    </div>
+  );
+}
